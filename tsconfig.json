@@ -18,6 +18,7 @@
   ],
   "files": [
     "src/lib/Test.ts",
+    "src/lib/Test2.ts",
     "src/schemas/TestSchema.ts"
   ],
   "compileOnSave": true
