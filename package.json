@@ -1,0 +1,49 @@
+{
+  "name": "node-kafka-tests",
+  "version": "1.0.0",
+  "description": "Kafka tests",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc",
+    "clean": "rimraf ./dist",
+    "build": "npm run clean && npm run tsc",
+    "prepublish": "publish-please guard",
+    "publish-please": "publish-please"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/infloop/node-kafka-tests.git"
+  },
+  "keywords": [
+    "Kafka"
+  ],
+  "author": "Infloop",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/infloop/node-kafka-tests/issues"
+  },
+  "homepage": "https://github.com/infloop/node-kafka-tests#readme",
+  "dependencies": {
+    "avsc": "^5.1.1",
+    "inversify": "^4.3.0",
+    "kafka-node": "^2.3.0",
+    "lodash": "^4.12.0",
+    "node-rdkafka": "^2.2.1",
+    "reflect-metadata": "^0.1.8",
+    "sinek": "^6.13.0",
+    "winston": "^2.2.0"
+  },
+  "devDependencies": {
+    "@types/kafka-node": "^2.0.3",
+    "@types/lodash": "4.14.62",
+    "@types/node": "^6.0.61",
+    "@types/winston": "^2.2.0",
+    "publish-please": "^2.2.0",
+    "rimraf": "^2.6.1",
+    "tslint": "^2.5.1",
+    "typescript": "^2.4.2"
+  },
+  "engines": {
+    "node": ">=6.2.0"
+  }
+}
