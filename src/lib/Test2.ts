@@ -1,5 +1,7 @@
 const { Client, Pool } = require('pg');
 
+// https://node-postgres.com/features/types
+
 async function start() {
 
   const pool = new Pool({
@@ -10,10 +12,15 @@ async function start() {
     port: 5432,
   });
 
-  pool.query('SELECT NOW()', (err, res) => {
-    console.log(err, res);
-    pool.end();
-  });
+  let res1 = await pool.query('SELECT NOW()');
+
+  console.log(res1.now);
+
+  await pool.query('INSERT INTO chunks(data) VALUES ($1)', [{name: "Paint house", tags: ["Improvements", "Office"], finished: true}]);
+
+  let { rows } = await pool.query('SELECT * FROM chunks');
+
+  console.log(rows);
 }
 
 

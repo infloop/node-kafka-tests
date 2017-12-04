@@ -1,3 +1,14 @@
 CREATE ROLE vlsuser WITH LOGIN PASSWORD '123456789';
 CREATE DATABASE vlsdb;
+CREATE EXTENSION IF NOT EXISTS "pgcrypto";
+
+\connect vlsdb;
+
+CREATE TABLE chunks (
+  id serial PRIMARY KEY,
+  data jsonb
+);
+
 GRANT ALL PRIVILEGES ON DATABASE vlsdb TO vlsuser;
+GRANT ALL PRIVILEGES ON TABLE chunks TO vlsuser;
+GRANT USAGE, SELECT ON SEQUENCE chunks_id_seq TO vlsuser;
